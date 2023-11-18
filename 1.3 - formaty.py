@@ -58,3 +58,9 @@ print(type(liczba2))
 print(f"{user:>10}")  # "     Tomek" - wyrównał do prawej
 print(f"{user:<20}")  # "Tomek        " - wyrównal do lewej
 print(f"{user:^25}")  # "          Tomek          " - wycentrował
+
+tekst = "jeden dwa trzy cztery"
+# podzielenie tekstu wg znaku " " - spacja
+print(tekst.split())  # ['jeden', 'dwa', 'trzy', 'cztery']
+tekst2 = "jeden, dwa, trzy, cztery"
+print(tekst2.split(","))  # ['jeden', ' dwa', ' trzy', ' cztery']
