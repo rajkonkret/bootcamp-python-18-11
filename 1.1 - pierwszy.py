@@ -32,3 +32,4 @@ print(5 * "4")  # 44444 - konkatenacja (wielokrotna)
 print(sys.int_info)  # wyswietlenie informacji o int
 # sys.int_info(bits_per_digit=30, sizeof_digit=4)
 # 13:45
+
