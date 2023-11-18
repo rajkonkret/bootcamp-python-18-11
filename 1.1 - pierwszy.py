@@ -33,3 +33,31 @@ print(sys.int_info)  # wyswietlenie informacji o int
 # sys.int_info(bits_per_digit=30, sizeof_digit=4)
 # 13:45
 
+# zmienna - pudełko na dane (przechowywane w pamięci)
+# typowanie dynamiczne - typ zmiennej jest określany na podstwie typu danej do niej wrzuconej
+# zmienna definiujemy poprzez nadanie jej nazyi wrzucenie danej do niej
+# snake_case - konwencja nazewniczna stosowana dla nazw zmiennych
+# camelCase, PascalCase, kebab-case - inne podtsawowe konwencje nazewnicze
+
+name = "Radek"  # zapisanie danych do zmiennej
+print(type(name))  # <class 'str'>
+# name_info: str - zmienna z podpowiedią typu, nie jest to walidacja typu
+name_info: str = "Maciek"
+print(type(name_info))  # <class 'str'>
+# wypisanie zawartości zmiennej (nazwa zmiennej bez cudzysłowia)
+print(name)  # Radek
+print(name_info)  # Maciek
+# Sprawdżmy czy rzeczywiscie str oznaczy tylko podpowiedź
+name_info = 50  # wrzucamy liczbę int
+print(name_info)  # pomimo wrzucenia int program nadal działa 50
+print(type(name_info))  # <class 'int'>
+
+age = 48
+print(age)  # 48
+print(type(age))  # <class 'int'>
+age = "Radek"
+
+# print(age + name_info)  # TypeError: can only concatenate str (not "int") to str
+# print(int(age) + name_info)  # ValueError: invalid literal for int() with base 10: 'Radek'
+age = "48"
+print(int(age) + name_info)  # 98
