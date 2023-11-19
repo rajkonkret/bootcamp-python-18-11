@@ -64,3 +64,5 @@ tekst = "jeden dwa trzy cztery"
 print(tekst.split())  # ['jeden', 'dwa', 'trzy', 'cztery']
 tekst2 = "jeden, dwa, trzy, cztery"
 print(tekst2.split(","))  # ['jeden', ' dwa', ' trzy', ' cztery']
+# ['jeden', 'dwa', 'trzy', 'cztery']
+# ['jeden', ' dwa', ' trzy', ' cztery']
