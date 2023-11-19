@@ -61,3 +61,5 @@ age = "Radek"
 # print(int(age) + name_info)  # ValueError: invalid literal for int() with base 10: 'Radek'
 age = "48"
 print(int(age) + name_info)  # 98
+
+age2 = "zmiana pliku"
