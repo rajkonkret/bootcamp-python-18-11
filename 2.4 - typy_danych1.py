@@ -47,3 +47,89 @@ print(f"""
 
 print(type(4 / 2))  # dzielenie zawsze daje float <class 'float'>
 
+# typ logiczny
+# przyjmuje wartości prawda lub fałsz  -> True lub False
+czy_znasz_pythona = True
+print(czy_znasz_pythona)  # True
+print(type(czy_znasz_pythona))  # <class 'bool'> typ logiczny
+print(int(czy_znasz_pythona))  # 1 int() - użyte jako rzutowanie typu bool na int
+czy_znasz_pythona = False
+print(int(czy_znasz_pythona))  # 0
+
+x = 1
+print(bool(x))  # True
+x = 0
+print(bool(x))  # False
+x = 100
+print(bool(x))  # True
+x = -10
+print(bool(x))  # True
+x = "radek"
+print(bool(x))  # True
+x = ''  # pusty string
+print(bool(x))  # False
+x = None  # nic, stan nieokreslony, nie wiem
+print(bool(x))  # False
+
+# utworzyłem zmienne i podstawiłem do nich wartości
+a = 14
+b = 3
+print(f"Wynik porówania {a} > {b} = {a > b}")  # Wynik porówania 14 > 3 = True
+print("Wynik porównania", a, "<", b, "=", a < b)  # Wynik porównania 14 < 3 = False
+print(f"Wynik porówania {a} == {b} = {a == b}")  # == - czy równe,
+# Wynik porówania 14 == 3 = False - porównanie a nie podstawienie
+print(f"Wynik porówania {a} != {b} = {a != b}")  # != rózne - Wynik porówania 14 != 3 = True
+print(f"Wynik porówania {a} >= {b} = {a >= b}")  # Wynik porówania 14 >= 3 = True
+print(f"Wynik porówania {a} <= {b} = {a <= b}")  # Wynik porówania 14 <= 3 = False
+
+# and - i
+print(True and True)  # True
+print(True and False)  # False
+print(False and True)  # False
+print(False and False)  # False
+
+# or - lub
+print(True or True)  # True
+print(True or False)  # True
+print(False or True)  # True
+print(False or False)  # False
+
+# not - negacja
+print(not True)  # False
+print(not False)  # True
+
+my_str = '123456789'
+print(my_str.isalnum())  # True
+print(my_str.isalpha())  # False - nie sa literami
+print(my_str.isdecimal())  # True
+print(my_str.isnumeric())  # True
+# Wymyslcie kila przykladów stringów i sprawdzcie je wybranymi metodami
+
+print("-----------")
+my_str2 = "abcdefghijkl"
+print(my_str2.isalnum())
+print(my_str2.isalpha())
+print(my_str2.isdecimal())
+print(my_str2.isnumeric())
+print(my_str2.islower())
+print(my_str2.isupper())
+# True
+# True
+# False
+# False
+# True
+# False
+print("----------")
+my_str3 = 'radek12345'
+print(my_str3.isalnum())
+print(my_str3.isalpha())
+print(my_str3.isdecimal())
+print(my_str3.isnumeric())
+print(my_str3.islower())
+print(my_str3.isupper())
+# True
+# False
+# False
+# False
+# True
+# False
