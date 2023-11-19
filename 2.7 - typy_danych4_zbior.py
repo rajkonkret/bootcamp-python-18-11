@@ -86,5 +86,5 @@ print(zbior4)  # {999, 11, 44, 18, 52, 22, 667, 62}
 print(zbior2)  # set() - zbior2 pusty, zbiór4 zachował elemnty
 
 # wrzucenie zawartosci innego zbioru do drugiego zbioru
-zbior2.update(zbior4)  # podobne do union
+zbior2.update(zbior4)  # podobne do union, taka suma zbiorów
 print(zbior2)  # {999, 11, 44, 18, 52, 22, 667, 62}
