@@ -31,4 +31,4 @@ print(tupla_liczby)  # (43, 55, 22.34, 11, 200)
 
 # można usunąc całą tuple z pamięci
 del temp
-# 13:45
+# 13:15
