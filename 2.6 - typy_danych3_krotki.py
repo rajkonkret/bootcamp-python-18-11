@@ -125,3 +125,4 @@ lista = list(tupla_names)  # zamiana (rzutowanie) tupli na liste
 print(lista)  # ['Radek', 'Tomek', 'Zenek', 'Bartek']
 print(type(lista))  # <class 'list'>
 print(len(tupla_names))  # 4, wyswietlenie długości tupli
+# 14:15
