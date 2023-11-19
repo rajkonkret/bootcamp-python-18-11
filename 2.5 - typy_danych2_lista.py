@@ -53,7 +53,7 @@ print(lista[4], lista[-1])  # wyswietlenie ostatniego elemntu z listy
 # print(lista[5])  # IndexError: list index out of range
 # print(lista[10])
 # Traceback (most recent call last):
-#   File "C:\Users\rajko\PycharmProjects\bootcamp-python-18-11\typy_danych2_lista.py", line 54, in <module>
+#   File "C:\Users\rajko\PycharmProjects\bootcamp-python-18-11\2.5 - typy_danych2_lista.py", line 54, in <module>
 #     print(lista[10])
 # IndexError: list index out of range
 # []
@@ -163,6 +163,48 @@ print(liczby3)  # [1, 12, 5, 8, 3]
 
 print(liczby)  # [13.34, 22, 34, 45, 687, 999]
 # nadpisac elemnt na indeksie ? czwarty element
-# wypisac osytani po indeksach dodatnich i ujenych (sprawdzic długosc listy)
+# wypisac ostatni po indeksach dodatnich i ujenych (sprawdzic długosc listy)
 # zrobic slice(wycinanie) jedno dodatnie, jedno ujemne
-# uunac z listy po indeksie i po elemncie
+# usunac z listy po indeksie i po elemencie
+liczby[3] = 10000  # nadpisanie czwartego elemntu, czyli indeks=3
+print(liczby[-1])  # sprawdenie ostatniego elemntu -1
+last = len(liczby)  # sprawdzenie długości listy
+print(liczby[last - 1])  # ostni indeks jest mniejszu o jeden niz długośc listy
+# bo numerowanie indeksów zaczynamy od 0
+print(liczby[1:3])  # [22, 34] - wypisał elemnty z listy od indeksu 1 do 2 (3 juz nie bieze)
+print(liczby[-2:])  # [687, 999] wypisał dwa ostatnie elementy listy
+
+liczby.remove(34)
+print(liczby)  # [13.34, 22, 10000, 687, 999]
+
+print(liczby.pop(2))  # 10000
+print(liczby)  # [13.34, 22, 687, 999]
+
+# posortowac i odwrócic w jednym kroku
+liczby.sort(reverse=True)
+print(liczby)  # [999, 687, 22, 13.34]
+
+# łączenie list
+print(liczby + liczby3)  # [999, 687, 22, 13.34, 1, 12, 5, 8, 3]
+liczby4 = liczby + liczby3  # wynik zapisalismy do nowej listy
+print(liczby4)  # [999, 687, 22, 13.34, 1, 12, 5, 8, 3] dane w nowej liscie
+
+# dodania elemntów listy do innej listy juz istniejacej
+liczby5 = [1, 2, 3, 4, 5]
+liczby6 = [6, 7, 8, 9]
+liczby5.extend(liczby6)
+print(liczby5)  # [1, 2, 3, 4, 5, 6, 7, 8, 9] - zmieniła sie liczby5
+
+tekst = "Python"
+lista_str = list(tekst)  # rozpakowannie sekwencji list() - rzutowanie
+print(lista_str)  # ['P', 'y', 't', 'h', 'o', 'n']
+
+lista_str2 = [tekst]  # tworzenie listy z danych zawartych w zmiennej
+print(lista_str2)  # ['Python']
+
+print(lista_str + lista_str2)  # ['P', 'y', 't', 'h', 'o', 'n', 'Python']
+
+# zamiana listy na krotke(tuple)
+krotka = tuple(liczby)
+print(krotka)  # (999, 687, 22, 13.34)
+print(type(krotka))  # <class 'tuple'>
