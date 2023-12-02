@@ -88,3 +88,10 @@ print(zbior2)  # set() - zbior2 pusty, zbiór4 zachował elemnty
 # wrzucenie zawartosci innego zbioru do drugiego zbioru
 zbior2.update(zbior4)  # podobne do union, taka suma zbiorów
 print(zbior2)  # {999, 11, 44, 18, 52, 22, 667, 62}
+
+zb3 = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+print(sum(zb3))  # 45 suma elemntów zbioru
+print(max(zb3))  # 9 maksymalna wartość
+print(min(zb3))  # 1 minimalna wartość
+print(len(zb3))  # 9 długość zbioru
+print(sorted(zb3))  # [1, 2, 3, 4, 5, 6, 7, 8, 9] sortowanie zbioru zwraca listę
