@@ -156,3 +156,11 @@ a = int(input("Podaj piersza liczbę"))
 b = int(input("Podaj druga liczbę"))
 print(f"Wynik {a} + {b} = {a + b}")
 # Wynik 1 + 2 = 3
+
+print("Name" in my_dict_copy)  # True
+print("Temat" in my_dict_copy)  # False
+# all() sprawdza czy wszystkie elemnty słownika nie są False
+print(all(my_dict_copy))  # True
+# any() czy ammay jakies True
+print(any(my_dict_copy))  # True
+# 10:45
