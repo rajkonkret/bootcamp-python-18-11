@@ -94,4 +94,4 @@ print(sum(zb3))  # 45 suma elemntów zbioru
 print(max(zb3))  # 9 maksymalna wartość
 print(min(zb3))  # 1 minimalna wartość
 print(len(zb3))  # 9 długość zbioru
-print(sorted(zb3))  # [1, 2, 3, 4, 5, 6, 7, 8, 9] sortowanie zbioru zwraca listę
+print(sorted(zb3))  # [1, 2, 3, 4, 5, 6, 7, 8, 9] sortowanie zbioru zwraca liste
