@@ -148,3 +148,11 @@ print(word_to_translate.get(odp.lower().replace(" ", "")))
 # kalkulator
 # pobrać dwie liczby
 # wypisac wynik działania (dodawania)
+
+# input() - zwraca zawsze string
+# int() - rzutowanie na int
+# float() - rzutowanie na float
+a = int(input("Podaj piersza liczbę"))
+b = int(input("Podaj druga liczbę"))
+print(f"Wynik {a} + {b} = {a + b}")
+# Wynik 1 + 2 = 3
