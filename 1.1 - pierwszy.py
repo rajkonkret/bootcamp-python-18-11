@@ -47,7 +47,7 @@ print(type(name_info))  # <class 'str'>
 # wypisanie zawartości zmiennej (nazwa zmiennej bez cudzysłowia)
 print(name)  # Radek
 print(name_info)  # Maciek
-# Sprawdżmy czy rzeczywiscie str oznaczy tylko podpowiedź
+# Sprawdźmy czy rzeczywiscie str oznaczy tylko podpowiedź
 name_info = 50  # wrzucamy liczbę int
 print(name_info)  # pomimo wrzucenia int program nadal działa 50
 print(type(name_info))  # <class 'int'>
