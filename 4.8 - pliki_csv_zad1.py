@@ -22,7 +22,7 @@ with open("records.csv", 'w', newline="") as csv_f:
     # csvwriter.writerow(fields)
     # csvwriter.writerow(row)
     # csv pozwala nam pracować z danymi umieszczonymi w słowniku
-    cswriter = csv.DictWriter(csv_f, fieldnames=fields)
+    cswriter = csv.DictWriter(csv_f, fieldnames=fields, delimiter=";")
     cswriter.writeheader()
     cswriter.writerow(zipped_dict)  # zapis z pojedynczego słownika
     cswriter.writerows(dict_list)  # zapis z listy słowników
