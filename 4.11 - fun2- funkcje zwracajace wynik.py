@@ -33,3 +33,4 @@ print(obl)
 print(type(obl))  # <class 'float'>
 if obl == 1230:
     print("Działa")  # Działa
+# 13:00
