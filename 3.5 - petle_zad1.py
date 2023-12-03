@@ -170,3 +170,26 @@ for index, (name, age) in enumerate(zipped_krotka):
 # 2 Tomek 18
 # 3 Martyna 26
 # 4 Marek NONE
+# w3school
+
+for i in range(0, 10, 2):  # start, stop, krok
+    print(i)
+
+for i in range(-10, 0, 2):
+    print(i)
+
+for i in range(10, 0, -2):
+    print(i)
+
+parzyste = [i for i in range(0, 10, 2)]
+print(parzyste)  # [0, 2, 4, 6, 8]
+
+c = {'name': 'Radek', 'age': '5'}
+# zamiana wartości z kluczami
+print({v: k for k, v in c.items()})  # {'Radek': 'name', '5': 'age'}
+# {k,v}  -> {v:k}  zamieniamy miejscami wartosci z kluczmi
+d = {}
+for k, v in c.items():  # (key, value)
+    d[v] = k
+
+print(d)  # {'Radek': 'name', '5': 'age'}
