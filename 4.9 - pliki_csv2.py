@@ -5,7 +5,7 @@ rows = []
 
 filename = 'records.csv'
 with open(filename, 'r') as f:
-    dialect = csv.Sniffer().sniff(f.read(1024))
+    dialect = csv.Sniffer().sniff(f.read(1024))  # wyszukiwanie znaku podziału
     print(f"Dialect delimiter: {dialect.delimiter}")  # Dialect delimiter: ;
     print(f"Dialect qutechar: {dialect.quotechar}")  # Dialect qutechar: "
     # csvreader = csv.reader(f, delimiter=";")
