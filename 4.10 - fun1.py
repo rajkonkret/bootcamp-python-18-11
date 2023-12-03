@@ -9,7 +9,7 @@ b = 7
 # definicja funkcji
 def dodaj():
     print(a + b)  # przyjeło wartości z globalnego zakresu (scope)
-    c = 7  # zdeklarowane wewnątrz funkcji, nie jest widoczne poza funkcją
+    c = 7  # zdeklarowane wewnątrz funkcji, nie jest widoczne poza funkcją (widoczność lokalna)
 
 
 def dodaj2(a, b):  # argumenty a i b obowiązkowe do przekazania
