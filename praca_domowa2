@@ -12,4 +12,15 @@ Filtracja Słów: Użytkownik powinien móc określić słowo (lub słowa), któ
 Obsługa Wyjątków: Program powinien prawidłowo obsługiwać sytuacje wyjątkowe, na przykład gdy użytkownik wprowadza puste dane.
 Funkcje: Zadania, takie jak podział tekstu na słowa i zliczanie słów, powinny być realizowane przez oddzielne funkcje.
 
-
+--------------
+Napisz funkcję, która oblicza średnią z listy liczb. F
+unkcja powinna obsługiwać wyjątki, takie jak pusta lista lub nieprawidłowe dane wejściowe.
+--------------
+Napisz program, który generuje losowe hasła. 
+Hasło powinno składać się z określonej liczby znaków, w tym dużych liter, małych liter, cyfr i symboli.
+--------------
+Napisz funkcję, która znajduje wspólne elementy w dwóch listach. 
+Funkcja powinna zwracać listę zawierającą unikalne wspólne elementy.
+--------------
+Napisz funkcję, która sprawdza, czy dana liczba jest liczbą pierwszą. Funkcja powinna zwracać True lub False.
+--------------
