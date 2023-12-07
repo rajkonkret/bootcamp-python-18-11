@@ -1,0 +1,15 @@
+Zadanie: Analizator Danych Tekstowych
+Cel:
+
+Napisać program w Pythonie, który analizuje dane tekstowe (na przykład zdania lub akapity) i wykonuje na nich określone operacje.
+
+Wymagania:
+
+Wczytanie Tekstu: Program powinien pozwolić użytkownikowi na wprowadzenie tekstu. Może to być jedno zdanie lub kilka zdań.
+Podział na Słowa: Tekst powinien zostać podzielony na słowa. Użyj metody split() stringów do podziału tekstu na słowa.
+Zliczanie Słów: Program powinien zliczyć, ile razy każde słowo pojawia się w tekście. Użyj słownika do przechowywania tej informacji.
+Filtracja Słów: Użytkownik powinien móc określić słowo (lub słowa), które będą pomijane w analizie.
+Obsługa Wyjątków: Program powinien prawidłowo obsługiwać sytuacje wyjątkowe, na przykład gdy użytkownik wprowadza puste dane.
+Funkcje: Zadania, takie jak podział tekstu na słowa i zliczanie słów, powinny być realizowane przez oddzielne funkcje.
+
+
