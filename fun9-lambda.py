@@ -153,3 +153,23 @@ print(f"Alphanumeric: {alphanum}")  # Alphanumeric: ['one', 'two2', 'three3', '8
 
 mix = list(filter(lambda x: not x.isnumeric() and not x.isalpha(), list3))
 print(f"Mix: {mix}")  # Mix: ['two2', 'three3']
+
+# map()
+# list = [1,2,3] -> map(lambda x: x * 2, list) -> [2,4,6]
+# list = [1,2,3] -> filter(lambda x: x % 2==0, list) -> [2] - parzyste
+# reduce - bierze kolejne elemnty, wykonuje na nich działanie,
+# w kolejnym kroku bierze wynik poprzedniego działania, kolejny elemnt
+# na tym wykonuje wskazane działanie - podobne do funkcji rekurencyjnej
+# list = [1,2,3] -> reduce(lambda a, b: a + b, list) -> 6
+# wyn = 1 + 2 = 3
+# wyn = 3 + 3 (kolejny element z listy) = 6
+from functools import reduce
+
+
+def add(a, b):
+    return a + b
+
+
+sum_all = reduce(add, [1, 2, 3])
+print(f"Reduce [sum_all]: {sum_all}")  # Reduce [sum_all]: 6
+# 10:30
