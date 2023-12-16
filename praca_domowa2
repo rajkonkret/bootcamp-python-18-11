@@ -23,4 +23,4 @@ Napisz funkcję, która znajduje wspólne elementy w dwóch listach.
 Funkcja powinna zwracać listę zawierającą unikalne wspólne elementy.
 --------------
 Napisz funkcję, która sprawdza, czy dana liczba jest liczbą pierwszą. Funkcja powinna zwracać True lub False.
---------------
+---------------
