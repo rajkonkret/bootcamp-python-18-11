@@ -3,6 +3,7 @@
 # lambda argumenty: wyrazenie
 # lambda ma return - zwraca wynik
 # moze byc zdefiniowana w miejscu użycia
+import operator
 
 odejmij = lambda a, b: a - b
 print(odejmij(6, 8))
@@ -172,4 +173,33 @@ def add(a, b):
 
 sum_all = reduce(add, [1, 2, 3])
 print(f"Reduce [sum_all]: {sum_all}")  # Reduce [sum_all]: 6
-# 10:30
+# 10:30 - czy nie mielismy miec 15 minut pierwsza?
+
+sum_all = reduce(lambda a, b: a + b, [1, 2, 3])
+print(f"Reduce [sum_all]: {sum_all}")  # Reduce [sum_all]: 6
+# [2, 20, 24, 46, 50, 68, 100, 122, 144, 200]
+sum_all = reduce(lambda a, b: a + b, list(map(lambda n: n * 2, list(filter(lambda n: n % 2 == 0, lista)))))
+print(f"Reduce [sum_all]: {sum_all}")  # Reduce [sum_all]: 556
+
+l_1 = [i for i in lista if i % 2 == 0]
+print(l_1)  # [10, 12, 34, 50, 72, 100]
+l_2 = [i * 2 for i in l_1]
+print(l_2)  # [20, 24, 68, 100, 144, 200]
+sum_all_2 = reduce(lambda a, b: a + b, l_2)
+print(sum_all_2)  # 556
+
+product = reduce(operator.mul, l_2)
+print(f"mul: {product}")  # mul: 94003200000
+add = reduce(operator.add, l_2)
+print(f"add: {add}")  # add: 556
+
+concat_str = reduce(operator.add, ['Python', 'Rocks'])
+print(f"Concat:{concat_str}")  # Concat:PythonRocks
+
+min_num = reduce(lambda a, b: a if a < b else b, l_2)
+print(f"Min num: {min_num}")  # Min num: 20
+
+print(reduce(lambda a, b: bool(a and b), [0, 0, 1, 0, 0]))  # False
+print(reduce(lambda a, b: bool(a and b), [0, 0, 0, 0, 0]))  # False
+print(reduce(lambda a, b: bool(a or b), [0, 0, 0, 0, 0]))  # False
+print(reduce(lambda a, b: bool(a or b), [0, 0, 1, 0, 0]))  # True
