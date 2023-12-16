@@ -3,16 +3,18 @@ import turtle
 # turtle - rysunki generowan za pomocą zółwia
 
 t = turtle.Turtle()
-t.speed(100)
+t.speed(-1)
 t.setheading(90)  # ustawienie głowy zółwia 90 stopni
 t.penup()  # podniesienie długopisu
 t.goto(0, -200)  # x, y
 t.pendown()  # opuszczenie długopisu
-
+# t.hideturtle()
+t.ht()  # ukrycie zółwia
 
 def branch(t, len):
     if len == 0: return
     nt = t.clone()
+    # nt = t
     nt.forward(50)
     nt.left(20)
     branch(nt, len - 1)
