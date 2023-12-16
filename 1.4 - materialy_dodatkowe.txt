@@ -104,3 +104,15 @@ spam -= 1    spam = spam - 1
 spam *= 1    spam = spam * 1
 spam /= 1    spam = spam / 1
 spam %= 1    spam = spam % 1
+
+\033[31m: Set text color to red
+\033[32m: Set text color to green
+\033[33m: Set text color to yellow
+\033[34m: Set text color to blue
+\033[35m: Set text color to magenta
+\033[36m: Set text color to cyan
+\033[37m: Set text color to white
+\033[0m: Reset text color to default
+\033[1m: Set text style to bold
+\033[4m: Set text style to underline
+print("\033[31mHello\033[0m") - kolorki
