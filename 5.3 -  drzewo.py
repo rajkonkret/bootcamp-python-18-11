@@ -11,6 +11,7 @@ t.pendown()  # opuszczenie długopisu
 # t.hideturtle()
 t.ht()  # ukrycie zółwia
 
+
 def branch(t, len):
     if len == 0: return
     nt = t.clone()
