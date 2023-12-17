@@ -20,3 +20,4 @@ if __name__ == '__main__':
 # Hi, PyCharm
 # ctrl / - automatyczne dodanie komentarza
 # ctrl alt l  - formatowanie tekstu wg zasad PEP8
+print("\033[31mHello\033[0m")
