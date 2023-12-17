@@ -28,6 +28,15 @@ class Human:
     def podaj_wiek(self):
         print("Mam", self.wiek, "lat")
 
+    def podaj_wzrost(self):
+        print(f"Mam {self.wzrost} cm")
+
+    def ruszaj(self):
+        if self.plec == 'm':
+            print("Ruszyłem w drogę")
+        else:
+            print("Ruszyłam w drogę")
+
 
 cz1 = Human('Anna', 27, 170)
 print(cz1)  # <__main__.Human object at 0x104275f90>
@@ -35,3 +44,12 @@ print(cz1.imie)  # Anna
 print(cz1.__doc__)
 print(cz1.__init__.__doc__)  # dokumentacja metody __init__
 cz1.powitanie()
+cz1.podaj_wzrost()
+cz1.ruszaj()  # Ruszyłam w drogę
+
+cz2 = Human('Radek', 46, 190, "m")
+cz2.podaj_wzrost()
+cz2.powitanie()
+# Mam 190 cm
+# Nazywam się Radek
+cz2.ruszaj()  # Ruszyłem w drogę
