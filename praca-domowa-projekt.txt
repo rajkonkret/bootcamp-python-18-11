@@ -3,4 +3,4 @@ Nalezy zrobić klasy Book, Library, User
 uzyc pętli while jako głównej pętli programu
 Ma byc mozliwosc dodawania nowych książek do biblioteki, wypożyczania, zwracania
 użyc zasad programowania obiektowego
-osłużyc błędy
+obsłużyc błędy
