@@ -28,7 +28,7 @@ print(MultimediaBook.__mro__)
 # <class '__main__.Ebook'>,
 # <class '__main__.DigitalMedia'>,
 # <class 'object'>)
-# mulimedia_ebook.print_media()
-# mulimedia_ebook.digital_media()
+mulimedia_ebook.print_media()
+mulimedia_ebook.digital_media()
 # Drukowana treść
 # Cyfrowa treść
