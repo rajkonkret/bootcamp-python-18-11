@@ -13,7 +13,7 @@ class AutoKeyDict(dict):
 
 class CaseInsesitiveDict(dict):
     def __missing__(self, key):
-        if isinstance(key, str):
+        if isinstance(key, str):  # sprawdza czy key przyszedł typu str
             return self.get(key.lower())
 
 
@@ -38,3 +38,4 @@ print(d2['name'])  # Radek
 d3 = CaseInsesitiveDict()
 d3['name'] = 'Radek'
 print(d3['Name'])  # Radek
+print(d3[1])  # None
