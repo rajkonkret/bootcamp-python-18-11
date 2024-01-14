@@ -15,10 +15,12 @@ class MyNumber2:
     def __init__(self, value):
         self.value = value
 
+    # jak napotka < wykona __lt__
     def __lt__(self, other):
         """Porównuje obiekty po wartości pola value"""
         return self.value < other.value
 
+    # jak napotka == wykona __eq__
     def __eq__(self, other):
         return self.value == other.value
 
