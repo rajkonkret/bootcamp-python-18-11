@@ -15,7 +15,7 @@
 #     'U'       universal newline mode (deprecated)
 #     ========= ===============================================================
 
-# with open("test.log") takie samo ustawienie parametróe
+# with open("test.log") takie samo ustawienie parametrów
 # with open("test.log", "rt)
 with open("test.log", "wt", encoding='utf-8') as fh:  # filehandler,'w' open for writing, truncating the file first
     fh.write("Powitanie\n")
