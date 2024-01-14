@@ -36,5 +36,5 @@ print(p[0])  # 1
 lista_ser = pickle.dumps(lista)
 print(lista_ser)
 # b'\x80\x04\x95\x0f\x00\x00\x00\x00\x00\x00\x00]\x94(K\x01K\x02K\x03K\x04K\x05e.'
-
+# zamiana na liste
 print(pickle.loads(lista_ser))  # [1, 2, 3, 4, 5]
