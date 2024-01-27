@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Lawrence",
+        "last": "Lawson"
+      },
+      "location": {
+        "street": {
+          "number": 4959,
+          "name": "Fairview St"
+        },
+        "city": "Adelaide",
+        "state": "Northern Territory",
+        "country": "Australia",
+        "postcode": 7521,
+        "coordinates": {
+          "latitude": "-85.3022",
+          "longitude": "-13.0443"
+        },
+        "timezone": {
+          "offset": "-1:00",
+          "description": "Azores, Cape Verde Islands"
+        }
+      },
+      "email": "lawrence.lawson@example.com",
+      "login": {
+        "uuid": "9867405a-be7b-454a-b4d0-e896212538ed",
+        "username": "ticklishbird920",
+        "password": "csfbr5yy",
+        "salt": "R5BQwqP9",
+        "md5": "c96b18e1c6caa83bcc3b4efc42161940",
+        "sha1": "1867140ef0a380ed2a3da55d3b61cdf459093d99",
+        "sha256": "b0273d3f8303911faac9c8fbe7341772447dbe8112819042b74762d9d16a3092"
+      },
+      "dob": {
+        "date": "1974-05-27T02:02:01.408Z",
+        "age": 49
+      },
+      "registered": {
+        "date": "2013-08-22T22:19:44.523Z",
+        "age": 10
+      },
+      "phone": "01-0132-5883",
+      "cell": "0451-461-558",
+      "id": {
+        "name": "TFN",
+        "value": "668135103"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/40.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/40.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/40.jpg"
+      },
+      "nat": "AU"
+    }
+  ],
+  "info": {
+    "seed": "55916ba4474e98bb",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}

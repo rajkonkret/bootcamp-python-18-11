@@ -1,0 +1,122 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Egil",
+        "last": "Cardoso"
+      },
+      "location": {
+        "street": {
+          "number": 3579,
+          "name": "Rua Quinze de Novembro "
+        },
+        "city": "São Leopoldo",
+        "state": "Amazonas",
+        "country": "Brazil",
+        "postcode": 39629,
+        "coordinates": {
+          "latitude": "-78.9586",
+          "longitude": "-150.2867"
+        },
+        "timezone": {
+          "offset": "+3:30",
+          "description": "Tehran"
+        }
+      },
+      "email": "egil.cardoso@example.com",
+      "login": {
+        "uuid": "52959d25-40e1-436b-809b-b1b3c28cbac0",
+        "username": "purplepeacock730",
+        "password": "112358",
+        "salt": "qa4gmyTs",
+        "md5": "3b1e045bc14ab26fdcd735e11c8bfcee",
+        "sha1": "0186a90bc264c9bbcf6a87ba532827e044ce8719",
+        "sha256": "42a9bec7b625a704656b4e2ea0c8649b43c79137d9ea73a2f9c20a42e45bea78"
+      },
+      "dob": {
+        "date": "1950-01-19T07:48:06.015Z",
+        "age": 74
+      },
+      "registered": {
+        "date": "2016-03-04T21:17:23.426Z",
+        "age": 7
+      },
+      "phone": "(71) 5776-8000",
+      "cell": "(67) 8227-8362",
+      "id": {
+        "name": "CPF",
+        "value": "064.149.256-91"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/22.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/22.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/22.jpg"
+      },
+      "nat": "BR"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Vedat",
+        "last": "Tütüncü"
+      },
+      "location": {
+        "street": {
+          "number": 819,
+          "name": "Anafartalar Cd"
+        },
+        "city": "Amasya",
+        "state": "Kocaeli",
+        "country": "Turkey",
+        "postcode": 82339,
+        "coordinates": {
+          "latitude": "-81.4890",
+          "longitude": "-171.3652"
+        },
+        "timezone": {
+          "offset": "-11:00",
+          "description": "Midway Island, Samoa"
+        }
+      },
+      "email": "vedat.tutuncu@example.com",
+      "login": {
+        "uuid": "acd34bd6-a30a-4727-a48a-f2e3fd01108c",
+        "username": "happybear441",
+        "password": "tobias",
+        "salt": "TioOdMja",
+        "md5": "a5353b0351bd7c03c2641115cdb75605",
+        "sha1": "ed6bb11ad714ccb980c15d7f66f52a0ab76e8069",
+        "sha256": "fe7b3b5f63836b6cb9e72b4530f881ea4c325313b9e0f70b268f2a85bc412cc6"
+      },
+      "dob": {
+        "date": "1951-07-05T20:07:46.290Z",
+        "age": 72
+      },
+      "registered": {
+        "date": "2019-06-28T00:58:20.187Z",
+        "age": 4
+      },
+      "phone": "(899)-369-0784",
+      "cell": "(888)-582-7919",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/87.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/87.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/87.jpg"
+      },
+      "nat": "TR"
+    }
+  ],
+  "info": {
+    "seed": "15904637ca247449",
+    "results": 2,
+    "page": 1,
+    "version": "1.4"
+  }
+}
