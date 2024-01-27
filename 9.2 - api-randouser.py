@@ -42,11 +42,22 @@ print("Zdjęcie zostało zapisane")
 
 
 # zbudowac schemat klas dla name(first,last), email, picture(large)
+class Name(BaseModel):
+    title: str
+    first: str
+    last: str
+
+
+class Picture(BaseModel):
+    large: str
+
 
 class UserInfo(BaseModel):
-    name: dict
+    # name: dict
+    name: Name
     email: str
-    picture: dict
+    # picture: dict
+    picture: Picture
 
 
 # user = data['results'][0]  - wyciągneliśmy wewnętrznego jsona z listy w jakiej w jsonie był
@@ -79,3 +90,13 @@ print(user_info)
 # picture = {'large': 'https://randomuser.me/api/portraits/men/74.jpg',
 #            'medium': 'https://randomuser.me/api/portraits/med/men/74.jpg',
 #            'thumbnail': 'https://randomuser.me/api/portraits/thumb/men/74.jpg'}
+print(user_info.name.first)
+print(user_info.name.last)
+print(user_info.email)
+print(user_info.name)
+print(user_info.picture)
+
+photo_url_pydantic = user_info.picture.large  # link do zdjęcia
+response_photo_pydantic = re.get(photo_url_pydantic)  # pobranie zdjęcia
+with open('user_photo_pydantic.jpg', 'wb') as f:
+    f.write(response_photo_pydantic.content)
