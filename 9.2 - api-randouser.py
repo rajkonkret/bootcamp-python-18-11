@@ -37,3 +37,4 @@ with open('user_photo.jpg', 'wb') as f:
     f.write(response_photo.content)
 
 print("Zdjęcie zostało zapisane")
+# zbudowac schemat klas dla name(first,last), email, picture(large)
