@@ -31,10 +31,23 @@ print(f"Stolica kraju: {country['capital'][0]}")  # Stolica kraju: Warsaw
 print(f"Liczba ludności: {country['population']}")  # Liczba ludności: 37950802
 
 
+# zrobić klasę dla słownika
+# {'official': 'Rzeczpospolita Polska', 'common': 'Polska'}
+class Pol(BaseModel):
+    official: str
+    common: str
+
+
+class NativeName(BaseModel):  # musi dziedziczyć po BaseModel
+    # pol: dict
+    pol: Pol
+
+
 class Name(BaseModel):
     common: str
     official: str
-    nativeName: dict
+    # nativeName: dict  # {'pol': {'official': 'Rzeczpospolita Polska', 'common': 'Polska'}}
+    nativeName: NativeName
 
 
 class CountryInfo(BaseModel):
@@ -61,3 +74,7 @@ for country in country_data:
     print(country.capital)  # ['Warsaw']
     print(country.name.nativeName)
     # {'pol': {'official': 'Rzeczpospolita Polska', 'common': 'Polska'}}
+    print(type(country.name.nativeName))  # <class '__main__.Pol'>
+    print(country.name.nativeName.pol)  # {'official': 'Rzeczpospolita Polska', 'common': 'Polska'}
+    print(type(country.name.nativeName.pol))  # <class '__main__.Pol'>
+    print(type(country.name.nativeName.pol.official))  # <class 'str'>
