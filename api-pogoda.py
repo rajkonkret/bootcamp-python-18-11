@@ -1,11 +1,12 @@
 # https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 import requests
+from datetime import datetime
 
 # url =  https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 # {API key}
 # https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 url = ('http://api.openweathermap.org/data/2.5/'
-       'weather?q=Warszawa&appid=99a24a78addf4a2c41947189fcff67f7&&lang=p&format=jsonl&units=metric')
+       'weather?q=Warszawa&appid={API key}&&lang=p&format=jsonl&units=metric')
 
 page = requests.get(url)
 print(page)  # <Response [200]>
@@ -23,3 +24,20 @@ print(json['main']['temp'])  # 2.75
 print(json['main']['temp_min'])  # 2.17
 print(json['main']['temp_max'])  # 3.73
 print(json['name'])  # Warsaw
+print("--------")
+sunrise = json['sys']['sunrise']
+print("Wschód słońca", sunrise)  # Wschód słońca 1706336711
+# timestamp - liczba sekund od epoki Unixa (1 stycznia 1970)
+dt_object_sunrise = datetime.fromtimestamp(sunrise)
+print("Wschód słońca", dt_object_sunrise)  # Wschód słońca 2024-01-27 07:25:11
+print("--------")
+sunset = json['sys']['sunset']
+print("Zachód słońca", sunrise)
+dt_object_sunset = datetime.fromtimestamp(sunset)
+print("Zachód słońca", dt_object_sunset)
+# --------
+# Wschód słońca 1706336711
+# Wschód słońca 2024-01-27 07:25:11
+# --------
+# Zachód słońca 1706336711
+# Zachód słońca 2024-01-27 16:11:40
