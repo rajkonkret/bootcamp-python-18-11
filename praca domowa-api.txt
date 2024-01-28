@@ -1,0 +1,2 @@
+http://numbersapi.com/#42 - skorzystac z tego api
+https://api.chucknorris.io
