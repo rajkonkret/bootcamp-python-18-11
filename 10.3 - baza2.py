@@ -15,9 +15,15 @@ try:
     salary REAL NOT NULL
     );'''
 
+    # zakomentowałem aby nie tworzyć drugi raz tej samej tabeli
     # cursor.execute(query)  # wykonanie polecenia sql(query) na bazie danych
     # sql_connection.commit()  # utrwalenie zmian w bazie
 
+    # wczytanie skryptu sql jako tekst do zmiennej w pythonie
+    with open('tables.sql', 'r') as file:
+        sql_script = file.read()
+
+    cursor.executescript(sql_script)
 
 except sqlite3.Error as e:
     print("Błąd bazy danych", e)
