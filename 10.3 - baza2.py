@@ -15,8 +15,8 @@ try:
     salary REAL NOT NULL
     );'''
 
-    cursor.execute(query)  # wykonanie polecenia sql(query) na bazie danych
-    sql_connection.commit()  # utrwalenie zmian w bazie
+    # cursor.execute(query)  # wykonanie polecenia sql(query) na bazie danych
+    # sql_connection.commit()  # utrwalenie zmian w bazie
 
 
 except sqlite3.Error as e:
