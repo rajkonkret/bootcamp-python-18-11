@@ -23,6 +23,7 @@ try:
     with open('tables.sql', 'r') as file:
         sql_script = file.read()
 
+    # wykonanie skryptu na bazie danych
     cursor.executescript(sql_script)
 
 except sqlite3.Error as e:
