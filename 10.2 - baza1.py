@@ -30,3 +30,17 @@ import sqlite3
 # sqlite> .mode csv
 # sqlite> .import dane_person.csv users
 # sqlite>
+try:
+    sql_connection = sqlite3.connect('sqlite_python.db')  # baza w pliku
+    # sql_connection = sqlite3.connect(':memory:')  # baza danych w pamięci
+    cursor = sql_connection.cursor()
+    print("Baza danych została podłączona")
+except sqlite3.Error as e:
+    print("Błąd bazy danych", e)
+finally:
+    if sql_connection:
+        sql_connection.close()
+        print("Baza została zamknieta")
+
+# Baza danych została podłączona
+# Baza została zamknieta
