@@ -19,7 +19,8 @@ from sqlalchemy import (
 
 from sqlalchemy.orm import relationship, sessionmaker, declarative_base
 
-engine = create_engine('sqlite:///:memory:')
+# engine = create_engine('sqlite:///:memory:')
+engine = create_engine('sqlite:///adress_book.db', echo=True)
 Base = declarative_base()
 
 
@@ -58,4 +59,9 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 anakin = Person(name='Anakin', age='38')
+anakin2 = Person(name='Anakin Akakin', age=38)
+anakin2.addresses = [Address(email='anakinkakin@wp.pl')]
+
 session.add(anakin)
+session.add(anakin2)
+session.commit()
