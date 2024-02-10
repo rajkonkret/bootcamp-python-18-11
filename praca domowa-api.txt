@@ -1,2 +1,4 @@
 http://numbersapi.com/#42 - skorzystac z tego api
 https://api.chucknorris.io
+https://tenders.guru/pl/api
+https://prs.ms.gov.pl/krs/openApi
