@@ -54,3 +54,14 @@ our_student = session.query(Student).filter_by(name="Anna Kowalska").first()
 print(f"Student: {our_student.name}")
 for course in our_student.courses:
     print(f"Zapisana na kurs: {course.title}")
+
+our_course = session.query(Course).first()
+print(our_course.title)
+for student in our_course.students:
+    print(f"Uczeń: {student.name}")
+# Student: Anna Kowalska
+# Zapisana na kurs: Programowanie w Pythonie dla zaawansowanch
+# Zapisana na kurs: Wprowadzenie do SQL
+# Programowanie w Pythonie dla zaawansowanch
+# Uczeń: Anna Kowalska
+# Uczeń: Jan Nowak
