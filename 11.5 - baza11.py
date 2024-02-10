@@ -11,13 +11,17 @@ class Parent(Base):
     name = Column(String(50))  # maksymalna długość tekstu
     children = relationship("Child", backref='parent')  # backref - doda pole parent w kalsie Child automatycznie
     # przy back_populate musieliśmy w klasie Child samo zdefiniowac to pole z odpowiednią realcją
+    # Child w relationship to nazwa klasy
 
 
 class Child(Base):
     __tablename__ = 'children'
     id = Column(Integer, primary_key=True)
     name = Column(String(50))
-    parent_id = Column(Integer, ForeignKey('parents.id'))
+    parent_id = Column(Integer, ForeignKey('parents.id'))  # parents to nazwa tabeli z której bierzemy obiekt o tym id
+
+    def __repr__(self):
+        return f"id={self.id}, name={self.name}"
 
 
 engine = create_engine('sqlite:///:memory:', echo=True)
@@ -44,9 +48,10 @@ print(our_parent)
 # filter_by - filtrowanie po wskazanym polu i wartosci
 our_parent_filtered = session.query(Parent).filter_by(name="Rodzic").first()
 print(f"Rodzic: {our_parent_filtered.name}")
+print(our_parent_filtered.children)  # [id=1, name=Dziecko 1, id=2, name=Dziecko 2]
 for child in our_parent_filtered.children:
-    print(f"Dziecko: {child.name}")
-    print(f"Rodzic: {child.parent.name}")
+    print(f"Dziecko: {child.name}")  # imie dziecka
+    print(f"Rodzic: {child.parent.name}")  # imie rodzica
 # Rodzic: Rodzic
 # 2024-02-10 14:24:53,316 INFO sqlalchemy.engine.Engine SELECT children.id AS children_id, children.name AS children_name,
 # children.parent_id AS children_parent_id
