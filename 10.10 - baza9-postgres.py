@@ -4,8 +4,8 @@ import asyncpg
 
 
 async def run():
-    conn = await asyncpg.connect(user='37970432_dane', password='Radito_02',
-                                 database='37970432_dane', host='serwer2348480.home.pl')
+    conn = await asyncpg.connect(user='', password='',
+                                 database='', host='')
     await conn.fetch('''CREATE TABLE IF NOT EXISTS users(id SERIAL PRIMARY KEY, name TEXT);''')
     await conn.execute('''
     INSERT INTO users (name) VALUES ($1);
