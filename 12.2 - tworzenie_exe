@@ -1,0 +1,9 @@
+# zainstalowanie potrzebnej biblioteki
+pip install pyinstaller
+
+# tworzenie exe
+pyinstaller --noconsole --onefile pytest2.py
+pyinstaller --noconsole --onefile pyinst_zad1.py
+pyinstaller pyinst_zad1.py
+# katalogi build i dist
+# GrallVM
