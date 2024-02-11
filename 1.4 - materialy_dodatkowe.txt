@@ -127,3 +127,7 @@ print("\033[31mHello\033[0m") - kolorki
 <ins> - Inserted text
 <sub> - Subscript text
 <sup> - Superscript text
+
+https://cssgridgarden.com/#pl
+https://flexboxfroggy.com/#pl
+https://flukeout.github.io/
