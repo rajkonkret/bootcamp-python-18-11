@@ -6,4 +6,4 @@ pyinstaller --noconsole --onefile pytest2.py
 pyinstaller --noconsole --onefile pyinst_zad1.py
 pyinstaller pyinst_zad1.py
 # katalogi build i dist
-# GrallVM
+# GrallVM - uruchaminie plikow pyton w srdowisku wirtualnym
