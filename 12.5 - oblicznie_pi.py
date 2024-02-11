@@ -26,6 +26,7 @@ def monte_carlo_pi(num_samples):
 
     return pi_estimate
 
+
 # def monte_carlo_pi(n):
 #     points_inside_circle = 0
 #
