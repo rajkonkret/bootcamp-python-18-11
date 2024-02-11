@@ -116,3 +116,14 @@ spam %= 1    spam = spam % 1
 \033[1m: Set text style to bold
 \033[4m: Set text style to underline
 print("\033[31mHello\033[0m") - kolorki
+
+<b> - Bold text
+<strong> - Important text
+<i> - Italic text
+<em> - Emphasized text
+<mark> - Marked text
+<small> - Smaller text
+<del> - Deleted text
+<ins> - Inserted text
+<sub> - Subscript text
+<sup> - Superscript text
