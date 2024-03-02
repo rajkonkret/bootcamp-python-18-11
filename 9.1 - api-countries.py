@@ -56,7 +56,7 @@ class CountryInfo(BaseModel):
     capital: List[str]
     population: int
 
-
+print(type(response.json()))
 country_data = [CountryInfo(**data) for data in response.json()]
 # tworzymy listę z obiektów jsona bo dostalismy JsonArray
 for country in country_data:
