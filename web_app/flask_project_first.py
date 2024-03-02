@@ -10,7 +10,7 @@ def index():
     return 'Hello World!!!!!!'
 
 
-@app.route('/cantor/<currency>/<int:amount>')
+@app.route('/cantor/<string:currency>/<int:amount>')
 def cantor(currency, amount):
     message = f'<h1>You selected {currency} and amount {amount}</h1>'
     return message
