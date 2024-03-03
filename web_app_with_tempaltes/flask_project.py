@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 
 app = Flask(__name__)
+# dodajemy secret_key aby komunikacja flash wykonywała się w bezpieczny sposób
+app.config['SECRET_KEY'] = 'KluczTrudnyDoZlamania123!!!'
 
 
 class Currency:
@@ -16,6 +18,7 @@ class Currency:
 class CantorOffer:
     def __init__(self):
         self.currencies = []
+        self.denied_codes = []
 
     def load_offer(self):
         """
@@ -26,6 +29,8 @@ class CantorOffer:
         self.currencies.append(Currency('EUR', "Euro", 'currencies/euro.jpg'))
         self.currencies.append(Currency('HUF', "Forint", 'currencies/huf.jpg'))
         self.currencies.append(Currency('PLN', "Zloty", 'currencies/zloty.jpg'))
+        self.currencies.append(Currency('RUB', "Rubel", 'kantor.png'))
+        self.denied_codes.append('RUB')
 
     def get_by_code(self, code):
         for currency in self.currencies:
@@ -47,11 +52,19 @@ def exchange():
     if request.method == 'GET':
         return render_template('exchange.html', offer=offer)
     else:
+        flash("Debug: starting exchange in POST mode")
         currency = "EUR"
         if 'currency' in request.form:
             currency = request.form['currency']
 
-        amount = "EUR"
+        if currency in offer.denied_codes:
+            flash('The currency {} cannot be accepted'.format(currency))
+        elif offer.get_by_code(currency) == 'unknown':
+            flash('The selected currency is unknown and cannot be accepted')
+        else:
+            flash('Request to exchange {} was accepted'.format(currency))
+
+        amount = "100"
         if 'amount' in request.form:
             amount = request.form['amount']
 
