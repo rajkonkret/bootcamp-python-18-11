@@ -41,7 +41,8 @@ class CantorOffer:
 
 @app.route("/")
 def index():
-    return 'This is index'
+    # return 'This is index'
+    return render_template('index.html')
 
 
 @app.route("/exchange", methods=['GET', 'POST'])

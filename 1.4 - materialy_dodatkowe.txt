@@ -135,3 +135,7 @@ https://flukeout.github.io/
 ---- html----
 Aby strona poprawnie wyświetlała się przy zmianie szerokości okna
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% extends "base.html" %} - dziedziczenie w plikach html za pomoca jinja
+<HR> - linia odzielająca bloki
+{{ super() }} - wykonnaie kodu z klasy wyzszej
