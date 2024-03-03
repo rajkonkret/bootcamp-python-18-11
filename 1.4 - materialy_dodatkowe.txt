@@ -139,3 +139,5 @@ Aby strona poprawnie wyświetlała się przy zmianie szerokości okna
 {% extends "base.html" %} - dziedziczenie w plikach html za pomoca jinja
 <HR> - linia odzielająca bloki
 {{ super() }} - wykonnaie kodu z klasy wyzszej
+{% include "menu.html" %} - dołaczenie jednego szblonu do drugiego
+
