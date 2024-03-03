@@ -23,5 +23,6 @@ def exchange():
 
         return render_template('exchange_results.html', currency=currency, amount=amount)
 
+
 if __name__ == '__main__':
     app.run(debug=True)
