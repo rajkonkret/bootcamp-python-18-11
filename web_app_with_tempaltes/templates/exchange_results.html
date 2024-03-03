@@ -7,14 +7,10 @@
 </head>
 <body>
 <h1>You selected {{ currency }} and amount {{ amount }}</h1>
-    {% if currency == 'EUR' %}
-        <img src="{{ url_for('static', filename='currencies/euro.jpg') }}">
-    {% elif currency == 'USD' %}
-        <img src="{{ url_for('static', filename='currencies/dollar.png') }}">
-    {% elif currency == 'HUF' %}
-        <img src="{{ url_for('static', filename='currencies/huf.jpg') }}">
+    {% if currency_info.code != 'unknown' %}
+        <img src="{{ url_for('static', filename=currency_info.flag) }}">
     {% else %}
-        <img src="{{ url_for('static', filename='kantor.png') }}">
+        <p>This currency is unknown for us</p>
     {% endif %}
 </body>
 </html>
