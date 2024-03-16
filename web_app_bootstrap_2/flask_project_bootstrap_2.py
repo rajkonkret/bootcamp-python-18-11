@@ -65,7 +65,7 @@ class CantorOffer:
 @app.route("/")
 def index():
     # return 'This is index'
-    return render_template('index.html',  active_menu='home')
+    return render_template('index.html', active_menu='home')
 
 
 @app.route("/exchange", methods=['GET', 'POST'])
@@ -74,7 +74,7 @@ def exchange():
     offer.load_offer()  # Wypełniamy listę obiektami Currency
 
     if request.method == 'GET':
-        return render_template('exchange.html',  active_menu='exchange', offer=offer)
+        return render_template('exchange.html', active_menu='exchange', offer=offer)
     else:
         flash("Debug: starting exchange in POST mode")
         currency = "EUR"
@@ -118,6 +118,39 @@ def delete_transaction(transaction_id):
     db.commit()
 
     return redirect(url_for('history'))
+
+
+@app.route("/edit_transaction/<int:transaction_id>", methods=['GET', 'POST'])
+def edit_transaction(transaction_id):
+    offer = CantorOffer()  # tworzymy pustą listę na obiekty typu Currency
+    offer.load_offer()  # Wypełniamy listę obiektami Currency
+
+    if request.method == 'GET':
+        return render_template('exchange.html', active_menu='exchange', offer=offer)
+    else:
+        flash("Debug: starting exchange in POST mode")
+        currency = "EUR"
+        if 'currency' in request.form:
+            currency = request.form['currency']
+
+        amount = "100"
+        if 'amount' in request.form:
+            amount = request.form['amount']
+
+        if currency in offer.denied_codes:
+            flash('The currency {} cannot be accepted'.format(currency))
+        elif offer.get_by_code(currency) == 'unknown':
+            flash('The selected currency is unknown and cannot be accepted')
+        else:
+            db = get_db()
+            sql_command = "INSERT INTO transactions(currency, amount, user) values (?, ?, ?);"
+            db.execute(sql_command, [currency, amount, 'admin'])
+            db.commit()
+            flash('Request to exchange {} was accepted'.format(currency))
+
+        return render_template('exchange_results.html', currency=currency, amount=amount,
+                               active_menu='exchange', currency_info=offer.get_by_code(currency))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
