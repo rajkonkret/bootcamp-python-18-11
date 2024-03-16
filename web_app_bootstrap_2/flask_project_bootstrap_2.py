@@ -1,8 +1,31 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, g
+import sqlite3
+
+# konfiguracja pliku dla bazy danych
+app_info = {
+    'db_file': 'data/cantor.db'
+}
 
 app = Flask(__name__)
 # dodajemy secret_key aby komunikacja flash wykonywała się w bezpieczny sposób
 app.config['SECRET_KEY'] = 'KluczTrudnyDoZlamania123!!!'
+
+
+# g - obiekt globalny, przechowuje dane w sesji, konieczny gdy musimy znac parametry uzyskane w danej sesji
+def get_db():
+    if not hasattr(g, 'sqlite_db'):  # sprawdza czy obiekt g posiada parametr sqlite_db
+        conn = sqlite3.connect(app_info['db_file'])
+        conn.row_factory = sqlite3.Row  # zwraca w postaci słownika
+        g.sqlite_db = conn  # zapisanie połączenia do bazy do obiektu globalnego g (w ramach sesji)
+    return g.sqlite_db
+
+
+# zamykanie bazy danych, kiedy opuszczamy sesje wykona tą metode
+@app.teardown_appcontext
+def close_db(error):
+    if hasattr(g, 'sqlite_db'):
+        g.sqlite_db.close()
+        print(error)
 
 
 class Currency:
@@ -58,16 +81,20 @@ def exchange():
         if 'currency' in request.form:
             currency = request.form['currency']
 
+        amount = "100"
+        if 'amount' in request.form:
+            amount = request.form['amount']
+
         if currency in offer.denied_codes:
             flash('The currency {} cannot be accepted'.format(currency))
         elif offer.get_by_code(currency) == 'unknown':
             flash('The selected currency is unknown and cannot be accepted')
         else:
+            db = get_db()
+            sql_command = "INSERT INTO transactions(currency, amount, user) values (?, ?, ?);"
+            db.execute(sql_command, [currency, amount, 'admin'])
+            db.commit()
             flash('Request to exchange {} was accepted'.format(currency))
-
-        amount = "100"
-        if 'amount' in request.form:
-            amount = request.form['amount']
 
         return render_template('exchange_results.html', currency=currency, amount=amount,
                                currency_info=offer.get_by_code(currency))
