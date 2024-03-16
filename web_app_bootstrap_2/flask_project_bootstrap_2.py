@@ -109,5 +109,6 @@ def history():
 
     return render_template('history.html', transactions=transactions)
 
+
 if __name__ == '__main__':
     app.run(debug=True)
