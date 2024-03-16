@@ -1,0 +1,36 @@
+<!--Formularz edycji zamówienia-->
+{% extends "base.html" %}
+
+{% block body_header %}
+    Enter transaction details
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-start">
+        <div class="col-5 h1">Edit Transaction</div>
+    </div>
+    <form id="exchange_form" action="{{ url_for('edit_transaction', transaction_id=transaction.id) }}" method="POST">
+        <div class="row justify-content-start">
+            <div class="col-2 col-form-label"><label for="currency">Currency</label></div>
+            <div class="col-4">
+                <select id="currency", name="currency" class="form-select">
+                    {% for currency in offer.currencies %}
+                        <option value="{{ currency.code }}"  {{'selected' if transaction.currency==currency.code}}>{{ currency.name }}</option>
+                    {% endfor %}
+                </select><br>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-2 col-form-label"><label for="amount" class="form-label">Amount</label></div>
+            <div class="col-4">
+                <input type="text" class="form-control" name="amount" id="amount" value="100"><br>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-2"></div>
+            <div class="col-4"><button type="submit" class="btn btn-primary w-100">Submit</button></div>
+        </div>
+    </form>
+</div>
+{% endblock %}

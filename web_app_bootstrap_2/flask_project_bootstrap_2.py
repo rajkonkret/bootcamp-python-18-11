@@ -1,3 +1,5 @@
+from datetime import date
+
 from flask import Flask, render_template, request, flash, g, url_for, redirect
 import sqlite3
 
@@ -124,9 +126,19 @@ def delete_transaction(transaction_id):
 def edit_transaction(transaction_id):
     offer = CantorOffer()  # tworzymy pustą listę na obiekty typu Currency
     offer.load_offer()  # Wypełniamy listę obiektami Currency
+    db = get_db()
 
     if request.method == 'GET':
-        return render_template('exchange.html', active_menu='exchange', offer=offer)
+        sql_statement = 'SELECT id, currency, amount from transactions WHERE id=?;'
+        cur = db.execute(sql_statement, [transaction_id])
+        transaction = cur.fetchone()  # pobranie jedego elementu
+
+        if transaction == None:
+            flash("No such transaction!")
+            return redirect(url_for('history'))
+        else:
+            return render_template('edit_transaction.html', transaction=transaction,
+                                   active_menu='history', offer=offer)
     else:
         flash("Debug: starting exchange in POST mode")
         currency = "EUR"
@@ -143,13 +155,17 @@ def edit_transaction(transaction_id):
             flash('The selected currency is unknown and cannot be accepted')
         else:
             db = get_db()
-            sql_command = "INSERT INTO transactions(currency, amount, user) values (?, ?, ?);"
-            db.execute(sql_command, [currency, amount, 'admin'])
+            sql_command = '''UPDATE transactions SET
+            currency=?,
+            amount=?,
+            user=?,
+            trans_date=?
+            WHERE id=?;'''
+            db.execute(sql_command, [currency, amount, 'admin', date.today(), transaction_id])
             db.commit()
-            flash('Request to exchange {} was accepted'.format(currency))
+            flash('Transaction was updated')
 
-        return render_template('exchange_results.html', currency=currency, amount=amount,
-                               active_menu='exchange', currency_info=offer.get_by_code(currency))
+        return redirect(url_for('history'))
 
 
 if __name__ == '__main__':
