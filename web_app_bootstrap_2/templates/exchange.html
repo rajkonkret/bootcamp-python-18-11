@@ -11,7 +11,7 @@
     </div>
     <form id="exchange_form" action="{{ url_for('exchange') }}" method="POST">
         <div class="row justify-content-start">
-            <div class="col-1 col-form-label"><label for="currency" class="form-label">Currency</label></div>
+            <div class="col-2 col-form-label"><label for="currency" class="form-label">Currency</label></div>
             <div class="col-4">
                 <select id="currency", name="currency" class="form-select">
                     {% for currency in offer.currencies %}
@@ -21,13 +21,13 @@
             </div>
         </div>
         <div class="row justify-content-start">
-            <div class="col-1 col-form-label"><label for="amount" class="form-label">Amount</label></div>
+            <div class="col-2 col-form-label"><label for="amount" class="form-label">Amount</label></div>
                 <div class="col-4">
                     <input type="text" class="form-control" id="amount" value="100"><br>
                 </div>
         </div>
         <div class="row justify-content-start">
-            <div class="col-1"></div>
+            <div class="col-2"></div>
             <div class="col-2"><button type="submit" class="btn btn-primary">Submit</button></div>
         </div>
     </form>
