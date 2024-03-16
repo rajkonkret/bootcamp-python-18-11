@@ -141,3 +141,5 @@ Aby strona poprawnie wyświetlała się przy zmianie szerokości okna
 {{ super() }} - wykonnaie kodu z klasy wyzszej
 {% include "menu.html" %} - dołaczenie jednego szblonu do drugiego
 
+---botstrap---
+w-100 - wypełnij pole w 100%
