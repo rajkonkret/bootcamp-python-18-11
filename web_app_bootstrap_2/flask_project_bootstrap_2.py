@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, g
+from flask import Flask, render_template, request, flash, g, url_for, redirect
 import sqlite3
 
 # konfiguracja pliku dla bazy danych
@@ -109,6 +109,15 @@ def history():
 
     return render_template('history.html', transactions=transactions, active_menu='history')
 
+
+@app.route("/delete_transaction/<int:transaction_id>")
+def delete_transaction(transaction_id):
+    db = get_db()
+    sql_statement = 'delete from transactions where id = ?;'
+    db.execute(sql_statement, [transaction_id])
+    db.commit()
+
+    return redirect(url_for('history'))
 
 if __name__ == '__main__':
     app.run(debug=True)
