@@ -153,3 +153,15 @@ btn-info: Może być używany do przekazania dodatkowych informacji użytkowniko
 btn-light: Jasny przycisk, który dobrze kontrastuje z ciemnym tłem.
 btn-dark: Ciemny przycisk, który dobrze kontrastuje z jasnym tłem.
 btn-link: Przycisk stylizowany jako link, bez tła i obramowania, ale zachowuje właściwości przycisku.
+
+----django----
+python -m pip install Django  - instalacja Django
+cd web_app_django - przejscie do katalogu gzie chcemy miec nowy projekt Django
+python3 -m django - version - sprawdzenie wersji Django
+django-admin --version - sprawdzenie wersji django
+django-admin startproject myproject - utworzennie projektu Django o nazwie myproject
+cd myproject - zmiana katalogu
+dir/ls - lista plików w katalogu
+cd .. - wyjscie do wyzszego katalogu
+python3 manage.py runserver  - uruchomienie serwera django
+python3 manage.py startapp myapp - stworzenia aplikacji django
