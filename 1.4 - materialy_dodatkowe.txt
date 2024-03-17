@@ -165,3 +165,11 @@ dir/ls - lista plików w katalogu
 cd .. - wyjscie do wyzszego katalogu
 python3 manage.py runserver  - uruchomienie serwera django
 python3 manage.py startapp myapp - stworzenia aplikacji django
+należy aplikację dodac w settings.py
+INSTALLED_APPS = [
+    ...
+    'books',
+    ...
+]
+python3 manage.py makemigrations books  - migracja danych do bazy
+python3 manage.py migrate - zatwierdzenie danych w bazie

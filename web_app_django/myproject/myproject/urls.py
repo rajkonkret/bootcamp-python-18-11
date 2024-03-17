@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('myapp.urls'))  # wskazujemy w którym pliku sa nasze routy
+    path('', include('books.urls'))  # wskazujemy w którym pliku sa nasze routy
 ]
