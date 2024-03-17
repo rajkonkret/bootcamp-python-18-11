@@ -143,3 +143,13 @@ Aby strona poprawnie wyświetlała się przy zmianie szerokości okna
 
 ---botstrap---
 w-100 - wypełnij pole w 100%
+
+btn-primary: Podstawowy przycisk, używany do wyróżnienia głównego działania na stronie.
+btn-secondary: Stosowany dla działań mniej priorytetowych niż te dla btn-primary.
+btn-success: Wskazuje na pomyślną akcję, np. zakończenie formularza czy potwierdzenie.
+btn-danger: Używany do działań, które mogą być destrukcyjne, jak usunięcie czy anulowanie.
+btn-warning: Sygnalizuje użytkownikowi ostrzeżenie, które może wymagać dodatkowej uwagi.
+btn-info: Może być używany do przekazania dodatkowych informacji użytkownikowi.
+btn-light: Jasny przycisk, który dobrze kontrastuje z ciemnym tłem.
+btn-dark: Ciemny przycisk, który dobrze kontrastuje z jasnym tłem.
+btn-link: Przycisk stylizowany jako link, bez tła i obramowania, ale zachowuje właściwości przycisku.
