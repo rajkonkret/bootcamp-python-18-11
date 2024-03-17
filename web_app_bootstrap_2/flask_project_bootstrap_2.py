@@ -5,7 +5,7 @@ import hashlib
 import random
 import string
 
-from flask import Flask, render_template, request, flash, g, url_for, redirect
+from flask import Flask, render_template, request, flash, g, url_for, redirect, session
 import sqlite3
 
 # konfiguracja pliku dla bazy danych
@@ -69,6 +69,19 @@ class UserPass:
         random_password = ''.join(random.choice(password_characters) for i in range(3))
         self.password = random_password
 
+    def login_user(self):
+        db = get_db()
+        sql_statement = 'SELECT id, name, email, password, is_active, is_admin FROM users WHERE name=?'
+        cur = db.execute(sql_statement, [self.user])
+        user_record = cur.fetchone()
+
+        if user_record != None and self.verify_password(user_record['password'], self.password):
+            return user_record
+        else:
+            self.user = None
+            self.password = None
+            return None
+
 
 @app.route('/init_app')
 def init_app():
@@ -89,6 +102,7 @@ def init_app():
     db.commit()
     flash('User {} with password {} has been added'.format(user_pass.user, user_pass.password))
     return redirect(url_for('index'))  # User dvf with password VSF has been added
+
 
 class Currency:
     def __init__(self, code, name, flag):

@@ -1,0 +1,32 @@
+<!--Formularz składania zamówienia-->
+{% extends "base.html" %}
+
+{% block body_header %}
+   Login
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-start">
+        <div class="col-5 h1">Login</div>
+    </div>
+    <form action="{{ url_for('login') }}" method="POST">
+        <div class="row justify-content-start">
+            <div class="col-2 col-form-label"><label for="user_name" class="form-label">User Name</label></div>
+            <div class="col-4">
+              <input type="text" id="user_name" name="user_name" class="form-control">
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-2 col-form-label"><label for="user_pass">Password</label></div>
+            <div class="col-4">
+                <input type="password" class="form-control" name="user_pass" id="user_pass"><br>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-2"></div>
+            <div class="col-4"><button type="submit" class="btn btn-primary w-100">Login</button></div>
+        </div>
+    </form>
+</div>
+{% endblock %}
