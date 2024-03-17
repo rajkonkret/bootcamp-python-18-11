@@ -21,7 +21,7 @@
                     <a class="nav-link {{'active' if active_menu=='login' }}" href="{{ url_for('login') }}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{'active' if active_menu=='logout' }}" href="">Logout</a>
+                    <a class="nav-link {{'active' if active_menu=='logout' }}" href="{{ url_for('logout') }}">Logout</a>
                 </li>
             </ul>
         </div>

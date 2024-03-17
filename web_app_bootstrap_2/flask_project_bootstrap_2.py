@@ -103,6 +103,17 @@ def login():
         return render_template('login.html', active_menu='login')
 
 
+@app.route('/logout')
+def logout():
+    if 'user' in session:
+        session.pop('user', None)
+        flash("You are logged out")
+        return redirect(url_for('login'))
+    else:
+        flash('You are already logged out')
+        return redirect(url_for('index'))
+
+
 @app.route('/init_app')
 def init_app():
     db = get_db()
