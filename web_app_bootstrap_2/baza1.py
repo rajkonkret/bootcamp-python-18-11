@@ -12,7 +12,16 @@ try:
     trans_date DATE NOT NULL DEFAULT(date()));
     '''
 
-    cursor.execute(query)
+    create_users = '''CREATE TABLE users(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password TEXT,
+    is_active BOOLEAN NOT NULL DEFAULT 0,
+    is_admin BOOLEAN NOT NULL DEFAULT 0
+    );'''
+    # cursor.execute(query)
+    cursor.execute(create_users)
 
     sql_conn.commit()
 except sqlite3.Error as e:

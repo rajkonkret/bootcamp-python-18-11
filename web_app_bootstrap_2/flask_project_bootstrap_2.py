@@ -1,5 +1,10 @@
 from datetime import date
 
+import binascii
+import hashlib
+import random
+import string
+
 from flask import Flask, render_template, request, flash, g, url_for, redirect
 import sqlite3
 
