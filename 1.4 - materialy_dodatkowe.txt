@@ -131,6 +131,7 @@ print("\033[31mHello\033[0m") - kolorki
 https://cssgridgarden.com/#pl
 https://flexboxfroggy.com/#pl
 https://flukeout.github.io/
+https://edabit.com/challenges
 
 ---- html----
 Aby strona poprawnie wyświetlała się przy zmianie szerokości okna
