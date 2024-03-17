@@ -51,8 +51,44 @@ class UserPass:
         return (salt + pwdhash).decode('ascii')  # budowanie całego hasła i odesłanie w postaci znków ascii
 
     def verify_password(self, stored_password, provided_password):
-        pass
+        salt = stored_password[:64]
+        stored_password = stored_password[64:]
+        pwdhash = hashlib.pbkdf2_hmac('sha512', provided_password.encode('utf-8'), salt.encode('utf-8'),
+                                      100000)
+        pwdhash = binascii.hexlify(pwdhash).decode('ascii')
+        return pwdhash == stored_password
 
+    def get_random_user_password(self):
+        random_user = ''.join(random.choice(string.ascii_lowercase) for i in range(3))
+        self.user = random_user
+
+        password_characters = string.ascii_letters
+        # ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'
+        # ascii_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        # ascii_letters = ascii_lowercase + ascii_uppercase
+        random_password = ''.join(random.choice(password_characters) for i in range(3))
+        self.password = random_password
+
+
+@app.route('/init_app')
+def init_app():
+    db = get_db()
+    sql_statement = 'SELECT COUNT(*) AS cnt FROM users WHERE is_active AND is_admin;'
+    cur = db.execute(sql_statement)
+    active_admins = cur.fetchone()
+
+    if active_admins != None and active_admins['cnt'] > 0:
+        flash('Application is already set-up. Nothing to do')
+        return redirect(url_for('index'))
+
+    user_pass = UserPass()
+    user_pass.get_random_user_password()
+    db.execute('''
+    INSERT INTO users(name, email, password, is_active, is_admin) VALUES(?,?,?,True,True);
+    ''', [user_pass.user, 'none@nowhere.no', user_pass.hash_password()])
+    db.commit()
+    flash('User {} with password {} has been added'.format(user_pass.user, user_pass.password))
+    return redirect(url_for('index'))  # User dvf with password VSF has been added
 
 class Currency:
     def __init__(self, code, name, flag):
