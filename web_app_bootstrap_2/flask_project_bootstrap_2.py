@@ -114,6 +114,19 @@ def logout():
         return redirect(url_for('index'))
 
 
+@app.route('/users')
+def users():
+    if not 'user' in session:
+        return redirect(url_for('login'))
+
+    db = get_db()
+    sql_command = 'SELECT id, name, email, is_admin, is_active from users;'
+    cur = db.execute(sql_command)
+    users = cur.fetchall()
+
+    return render_template('users.html', active_menu='users', users=users)
+
+
 @app.route('/init_app')
 def init_app():
     db = get_db()
