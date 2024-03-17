@@ -35,6 +35,25 @@ def close_db(error):
         print(error)
 
 
+class UserPass:
+    def __init__(self, user='', password=''):
+        self.user = user
+        self.password = password
+
+    def hash_password(self):
+        # generujemy losowy ciag bajtów metoda urandom, zapisujemy do zmiennej ( w osobnym pliku)
+        os_urandom_static = b'\xb3Z\xfa\xae\xdc\xbe\xdb\xc8\xd5\xf5\\\x0e1I\xa33\xeb\xdb\xf9\x99\xdd\x0b\xc1\xb8\xd4R\xb2\xb5\xe0\xa9\xa19\xbc\x90\x1e\x80\xff\xb6.l/\xfbr\x99\xaf\xecv\xc1\xa9X\xf9\xcc\t7\x12\x11y\x9fp\xdc'
+        # generujemy z ciagu znaków salt (sól) czyli dodatkowy element hashowania
+        salt = hashlib.sha256(os_urandom_static).hexdigest().encode('ascii')
+        # uzywamy algorytmu pbkdf2 do zaszyfrowania hasła siła sha512
+        pwdhash = hashlib.pbkdf2_hmac('sha512', self.password.encode('utf-8'), salt, 100000)
+        pwdhash = binascii.hexlify(pwdhash)  # zamiana na binascii
+        return (salt + pwdhash).decode('ascii')  # budowanie całego hasła i odesłanie w postaci znków ascii
+
+    def verify_password(self, stored_password, provided_password):
+        pass
+
+
 class Currency:
     def __init__(self, code, name, flag):
         self.code = code
