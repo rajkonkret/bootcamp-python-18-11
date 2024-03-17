@@ -83,6 +83,26 @@ class UserPass:
             return None
 
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'GET':
+        return render_template('login.html', active_menu='login')
+    else:  # tak naprawdę dla POST
+        user_name = '' if "user_name" not in request.form else request.form['user_name']
+        user_pass = '' if "user_pass" not in request.form else request.form['user_pass']
+
+    login = UserPass(user_name, user_pass)
+    login_record = login.login_user()
+
+    if login_record != None:
+        session['user'] = user_name
+        flash(f"Login succesfull, welcome {user_name}")
+        return redirect(url_for('index'))
+    else:
+        flash("Login failed, try again")
+        return render_template('login.html', active_menu='login')
+
+
 @app.route('/init_app')
 def init_app():
     db = get_db()
