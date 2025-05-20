@@ -175,3 +175,6 @@ INSTALLED_APPS = [
 python3 manage.py makemigrations books  - migracja danych do bazy
 python3 manage.py migrate - zatwierdzenie danych w bazie
  {% csrf_token %} - token wstrzykiwany prze z django. wykorzystany do zabezpieczenia danych
+
+link do omówienia django:
+https://notebooklm.google.com/notebook/cb0d4efe-4c35-4f24-b26a-107573c81daa/audio
